@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{%  block start  %}
+  <div class=" mt-4 px-5"><h1>This is a index page.</h1>
+  <div class=" d-flex justify-content-around border border-dark">
+    <a href="/contact/">
+      contact
+    </a>
+    <a href="/about/">
+      about
+    </a>
+  
+  
+  </div>
+  {{peoples}}
+
+  <table class="table mt-4">
+    <tr>
+      <th>s.no</th>
+      <th>name</th>
+      <th>age</th>
+      <th>can vote</th>
+    </tr>
+    {% for people in peoples %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{people.name}}</td>
+      <td>{{people.age}}</td>
+      <td>
+        {% if people.age >= 18 %}
+        👍
+        {% else %}
+        👎
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  {{text}}
+</div>
+
+{% endblock %}
