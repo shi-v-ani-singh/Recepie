@@ -25,6 +25,12 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('',home,name="home"),
+    # register url
+    path('register/',register_page,name='register_page'),
+    
+    # login url
+    path('login/',login_page,name='login_page'),
+
     path('recipes/',recipes,name ="recipes"),
     # delete_recipe is a dynamic route due to id attribute
     path('delete-recipe/<id>/',delete_recipe,name ="delete_recipe"),
